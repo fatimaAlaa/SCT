@@ -8,7 +8,13 @@ class User {
         this.xp += obj[challenge.level];
         this.log.push(challenge.id);
     }
-    
+
+}
+class challenge {
+    constructor(id, level) {
+        this.id = id;
+        this.level = level;
+    }
 }
 let obj = {
     "VE": 5,
@@ -20,19 +26,14 @@ let obj = {
 }
 var user1 = new User("Fatima", 0, []);
 console.log(user1)
-user1.newSolvedChallenge({
-    id: 1,
-    level: 'VE'
-});
-let o = {
-    id: 2,
-    level: 'ME'
-};
-let f = {
-    id: 3,
-    level: 'ME'
-};
-user1.newSolvedChallenge(o);
-user1.newSolvedChallenge(f);
+let ch1 = new challenge(1, "ME")
+user1.newSolvedChallenge(ch1);
+
+let ch2 = new challenge(2, "ME")
+user1.newSolvedChallenge(ch2);
+
+let ch3 = new challenge(3, "EA")
+user1.newSolvedChallenge(ch3);
+
 console.log(user1.xp);
 console.log(user1.log);
